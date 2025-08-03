@@ -12,6 +12,12 @@ if (action.type === 'increment') {
   if (action.type === 'decrement') {
     return { ...store, count: store.count - 1 };
   }
+    if (action.type === 'input') {
+      console.log(action.payload);
+      let input = Number(action.payload)
+      let newCount = input + store.count;
+    return { ...store, count: newCount };
+  }
   return store;
 };
 
