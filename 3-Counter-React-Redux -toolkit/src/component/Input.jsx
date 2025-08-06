@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { counterInput } from "../store/indexStore";
 export default function Input() {
   const [input, setInput] = useState("");
-   const dispatch =    useDispatch();
-   const counter = useSelector((state) => state.count);
- useEffect(() => {
-    setInput(counter.toString()); // if `counter` is a number
-  }, [counter]);
+  const dispatch =    useDispatch();
   const handleClick = () => {
-   
-   dispatch({type: 'input', payload: input });
+    dispatch(counterInput(input));
   };
 
  
